@@ -2,7 +2,7 @@
     <div class="container">
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-primary" @click="removeCounter" style="background-color: red">Remove</button>
+                <button class="button is-primary" :disabled='isZero' @click="removeCounter" style="background-color: red">Remove</button>
             </div>
         </div>
     </div>
@@ -11,16 +11,21 @@
 <script>
     import store from '../store/store';
     import * as type from '../store/mutation types/types'
+    import {mapGetters} from 'vuex'
+
     export default {
         name: "RemoveCounter",
 
         methods:{
             removeCounter(){
-                store.dispatch({
-                    type: type.Decrement,
-                    amount: 1
-                })
+                store.dispatch('decrement')
             }
+        },
+
+        computed: {
+            ...mapGetters({
+                isZero: 'isZero'
+            })
         }
     }
 </script>

@@ -5,24 +5,40 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        count: 0
+        count: 0,
+        isZero: true
     },
 
-    mutations:{
-        increment(state, payload){
-            return state.count = state.count + payload.amount;
+    getters: {
+        isZero: state => state.isZero,
+        count: state => state.count
+    },
+
+    mutations: {
+        INCREMENT(state) {
+            state.isZero = false;
+            state.count++;
         },
-        decrement(state, payload){
-            return state.count = state.count - payload.amount;
+
+        DECREMENT(state) {
+            if (state.count > 0) {
+                state.count--;
+
+                if (state.count == 0) {
+                    state.isZero = true;
+                }
+            }
+
+
         }
 
     },
     actions: {
-        increment(context, payload){
-            context.commit('increment', payload)
+        increment(context) {
+            context.commit('INCREMENT')
         },
-        decrement(context, payload){
-            context.commit('decrement', payload)
+        decrement(context) {
+            context.commit('DECREMENT')
         }
     }
 

@@ -7,20 +7,18 @@
 </template>
 
 <script>
-    import { mapState } from 'vuex'
+    import { mapState, mapGetters } from 'vuex'
     export default {
-        computed: mapState({
-            count: state => state.count
 
-            // // For cases where negative values should not be shown
-            // count: function(state){
-            //     if(state.count < 0){
-            //         state.count = 0;
-            //         return state.count;
-            //     }
-            //     return state.count;
-            // }
-        })
+        computed:{
+            ...mapState({
+                count: state => state.count
+            }),
+
+            ...mapGetters({
+                count: 'count'
+            })
+        }
     }
 </script>
 

@@ -2,7 +2,9 @@
     <div class="container">
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-primary" v-on:click="addCounter" style="background-color: #42b983">Add</button>
+                <button class="button is-primary" v-on:click="addCounter"
+                        style="background-color: #42b983">Add
+                </button>
             </div>
         </div>
     </div>
@@ -15,14 +17,13 @@
     export default {
         name: "AddCounter",
 
-        methods:{
-            addCounter(){
-                store.dispatch({
-                    type: type.Increment,
-                    amount: 1
-                })
+        methods: {
+            addCounter() {
+                // store.dispatch('increment')
+
+                store.commit('INCREMENT');
             }
-        }
+        },
     }
 </script>
 
