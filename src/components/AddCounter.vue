@@ -2,7 +2,7 @@
     <div class="container">
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-primary" v-on:click="addCounter">Add</button>
+                <button class="button is-primary" v-on:click="addCounter" style="background-color: #42b983">Add</button>
             </div>
         </div>
     </div>

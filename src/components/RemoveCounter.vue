@@ -2,7 +2,7 @@
     <div class="container">
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-primary" @click="removeCounter">Remove</button>
+                <button class="button is-primary" @click="removeCounter" style="background-color: red">Remove</button>
             </div>
         </div>
     </div>

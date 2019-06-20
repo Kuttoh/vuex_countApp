@@ -1,9 +1,7 @@
 <template>
     <div class="counter">
         <div class="notification">
-            <h1 class="title" align="center">
-                {{count}}
-            </h1>
+            <h1 class="title" align="center" style="color: #42b983">{{count}}</h1>
         </div>
     </div>
 </template>
